@@ -1,0 +1,21 @@
+[
+    {
+        "modid": "messaging",
+        "name": "Messaging",
+        "description": "聊天消息转发",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "https://github.com/limbang",
+        "updateUrl": "https://github.com/limbang",
+        "authorList": [
+            "limbang"
+        ],
+        "credits": "",
+        "logoFile": "",
+        "screenshots": [],
+        "requiredMods": [
+            "forgelin"
+        ],
+        "dependencies": []
+    }
+]
