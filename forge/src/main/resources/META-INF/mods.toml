@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[40,)"
+#issueTrackerURL = ""
+license = "AGPLv3"
+
+[[mods]]
+modId = "messaging"
+version = "${version}"
+displayName = "Messaging"
+authors = "limbang"
+description = '''
+消息转发：使用 WebSocket 协议，转发玩家消息。
+'''
+#logoFile = ""
+
+[[dependencies.messaging]]
+modId = "forge"
+mandatory = true
+versionRange = "[40,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.messaging]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.messaging]]
+modId = "architectury"
+mandatory = true
+versionRange = "[4.9.83,)"
+ordering = "AFTER"
+side = "BOTH"
