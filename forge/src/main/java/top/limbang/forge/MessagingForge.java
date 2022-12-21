@@ -8,9 +8,9 @@
 package top.limbang.forge;
 
 import dev.architectury.platform.forge.EventBuses;
-import top.limbang.Messaging;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import top.limbang.Messaging;
 
 @Mod(Messaging.MOD_ID)
 public class MessagingForge {

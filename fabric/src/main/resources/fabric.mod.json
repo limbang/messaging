@@ -11,7 +11,7 @@
     "homepage": "https://github.com/limbang/messaging",
     "sources": "https://github.com/limbang/messaging"
   },
-  "license": "AGPLv3",
+  "license": "GNU AGPL 3.0",
   "icon": "assets/messaging/icon.png",
   "environment": "*",
   "entrypoints": {
