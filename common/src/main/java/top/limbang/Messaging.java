@@ -9,12 +9,13 @@ package top.limbang;
 
 import com.mojang.logging.LogUtils;
 import org.slf4j.Logger;
+import top.limbang.events.MessagingEvents;
 
 public class Messaging {
     public static final String MOD_ID = "messaging";
 
     public static final Logger logger = LogUtils.getLogger();
     public static void init() {
-
+        MessagingEvents.register();
     }
 }
