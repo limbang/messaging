@@ -65,7 +65,7 @@ public class WebsocketServer {
         try {
             // 绑定端口
             ChannelFuture future = bootstrap.bind(port).sync();
-            logger.info("Start WebSocket Server 0.0.0.0:{}", port);
+            logger.info("Start WebSocket Server 0.0.0.0:" + port);
             // 一直阻塞直到服务器关闭
             future.channel().closeFuture().sync();
         } catch (InterruptedException e) {

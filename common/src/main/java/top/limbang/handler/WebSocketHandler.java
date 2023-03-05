@@ -28,24 +28,24 @@ public class WebSocketHandler extends SimpleChannelInboundHandler<TextWebSocketF
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) {
-        logger.info("客户端:{} 发来消息 {}", ctx.channel().id().asShortText(), msg.text());
+        logger.info("客户端:{}" + ctx.channel().id().asShortText() + "发来消息 " + msg.text());
         try {
             UserMessage userMessage = gson.fromJson(msg.text(), UserMessage.class);
             if (userMessage.getName() != null && userMessage.getMessage() != null)
                 MessagingServer.sendMessageToAllPlayer(userMessage);
         } catch (JsonSyntaxException e) {
-            logger.error("Json语法错误:{}", msg.text());
+            logger.error("Json语法错误:" + msg.text());
         }
     }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
         clients.add(ctx.channel());
-        logger.info("客户端:{} 连接成功...", ctx.channel().id().asShortText());
+        logger.info("客户端:" + ctx.channel().id().asShortText() + " 连接成功...");
     }
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) {
-        logger.info("客户端:{} 断开连接...", ctx.channel().id().asShortText());
+        logger.info("客户端:" + ctx.channel().id().asShortText() + " 断开连接...");
     }
 }

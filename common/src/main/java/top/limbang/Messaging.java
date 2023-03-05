@@ -7,14 +7,17 @@
 
 package top.limbang;
 
-import com.mojang.logging.LogUtils;
-import org.slf4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import top.limbang.events.MessagingEvents;
 
 public class Messaging {
     public static final String MOD_ID = "messaging";
 
-    public static final Logger logger = LogUtils.getLogger();
+    public static final Logger logger = LogManager.getLogger("messaging");
+
+
+   // public static final Log logger = LogFactory.getLog(Messaging.class);
     public static void init() {
         MessagingEvents.register();
     }

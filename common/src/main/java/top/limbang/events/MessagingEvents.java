@@ -7,9 +7,9 @@
 
 package top.limbang.events;
 
-import dev.architectury.event.EventResult;
-import dev.architectury.event.events.common.ChatEvent;
-import dev.architectury.event.events.common.LifecycleEvent;
+import me.shedaniel.architectury.event.events.ChatEvent;
+import me.shedaniel.architectury.event.events.LifecycleEvent;
+import net.minecraft.world.InteractionResultHolder;
 import top.limbang.Messaging;
 import top.limbang.MessagingServer;
 import top.limbang.entity.UserMessage;
@@ -27,13 +27,13 @@ public class MessagingEvents {
         // 注册客户端发给服务器聊天消息事件监听
         ChatEvent.SERVER.register((player, message, component) -> {
             // 判断前缀是否带群
-            if (message.getRaw().startsWith("群")) {
-                UserMessage msg = new UserMessage(player.getName().getString(), message.getRaw().substring(1).trim());
-                Messaging.logger.info("监听到要转发的消息:{}", msg);
+            if (message.startsWith("群")) {
+                UserMessage msg = new UserMessage(player.getName().getString(), message.substring(1).trim());
+                Messaging.logger.info("监听到要转发的消息:" + msg);
                 // 广播消息给客户端
                 MessagingServer.broadcast(msg);
             }
-            return EventResult.pass();
+            return InteractionResultHolder.pass(component);
         });
     }
 }
