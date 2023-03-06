@@ -1,6 +1,6 @@
 {
   "pack": {
     "description": "消息转发：使用 WebSocket 协议，转发玩家消息。",
-    "pack_format": 8
+    "pack_format": 9
   }
 }

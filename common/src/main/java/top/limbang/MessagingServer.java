@@ -8,7 +8,6 @@
 package top.limbang;
 
 import net.minecraft.ChatFormatting;
-import net.minecraft.Util;
 import net.minecraft.network.chat.*;
 import net.minecraft.server.MinecraftServer;
 import top.limbang.entity.UserMessage;
@@ -20,7 +19,7 @@ public class MessagingServer {
 
     private static MinecraftServer minecraftServer;
 
-    private static final MutableComponent reply = new TextComponent("点击回复");
+    private static final MutableComponent reply = Component.literal("点击回复");
 
     static {
         // 设置点击回复样式和点击事件
@@ -37,12 +36,12 @@ public class MessagingServer {
      */
     public static void sendMessageToAllPlayer(UserMessage msg){
         // 拼接要发送对消息
-        MutableComponent text = new TextComponent(ChatFormatting.DARK_GREEN + "[群]")
+        MutableComponent text = Component.literal (ChatFormatting.DARK_GREEN + "[群]")
                 .append(ChatFormatting.GOLD + " <" + msg.getName() + "> ")
                 .append(ChatFormatting.WHITE + msg.getMessage() + " ")
                 .append(reply);
         // 对所有玩家发送消息
-        minecraftServer.getPlayerList().broadcastMessage(text, ChatType.CHAT, Util.NIL_UUID);
+        minecraftServer.getPlayerList().broadcastSystemMessage(text,true);
     }
 
     public static void create(MinecraftServer server){

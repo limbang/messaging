@@ -25,10 +25,10 @@ public class MessagingEvents {
         LifecycleEvent.SERVER_STOPPING.register(server -> MessagingServer.stop());
 
         // 注册客户端发给服务器聊天消息事件监听
-        ChatEvent.SERVER.register((player, message, component) -> {
+        ChatEvent.RECEIVED.register((player, component) -> {
             // 判断前缀是否带群
-            if (message.getRaw().startsWith("群")) {
-                UserMessage msg = new UserMessage(player.getName().getString(), message.getRaw().substring(1).trim());
+            if (component.getString().startsWith("群")) {
+                UserMessage msg = new UserMessage(player.getName().getString(), component.getString().substring(1).trim());
                 Messaging.logger.info("监听到要转发的消息:{}", msg);
                 // 广播消息给客户端
                 MessagingServer.broadcast(msg);
