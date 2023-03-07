@@ -41,7 +41,7 @@ public class MessagingServer {
                 .append(ChatFormatting.WHITE + msg.getMessage() + " ")
                 .append(reply);
         // 对所有玩家发送消息
-        minecraftServer.getPlayerList().broadcastSystemMessage(text,true);
+        minecraftServer.getPlayerList().broadcastSystemMessage(text,false);
     }
 
     public static void create(MinecraftServer server){
