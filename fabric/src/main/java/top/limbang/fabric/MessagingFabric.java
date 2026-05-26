@@ -8,11 +8,11 @@
 package top.limbang.fabric;
 
 import net.fabricmc.api.ModInitializer;
-import top.limbang.fabriclike.MessagingFabricLike;
+import top.limbang.Messaging;
 
 public class MessagingFabric implements ModInitializer {
     @Override
     public void onInitialize() {
-        MessagingFabricLike.init();
+        Messaging.init();
     }
 }

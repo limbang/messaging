@@ -7,7 +7,7 @@
 ![](https://img.shields.io/badge/forge--fabric-1.16.5-green)
 ![](https://img.shields.io/badge/forge--fabric-1.18.2-green)
 ![](https://img.shields.io/badge/forge--fabric-1.19.2-green)
-
+![](https://img.shields.io/badge/neoforge--fabric-1.21-green)
 
 本项目是基于 [Architectury API](https://github.com/architectury/architectury-api) 编写的 [Minecraft](https://www.minecraft.net/) Mod
 

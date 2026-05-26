@@ -19,9 +19,17 @@
       "top.limbang.fabric.MessagingFabric"
     ]
   },
+  "mixins": [
+    "messaging.mixins.json"
+  ],
   "depends": {
-    "fabric": "*",
-    "minecraft": ">=1.19.2",
-    "architectury": ">=6.2.43"
+    "fabricloader": ">=0.19.2",
+    "fabric-api": "*",
+    "minecraft": ">=1.21",
+    "architectury": ">=13.0.8",
+    "java": ">=21"
+  },
+  "suggests": {
+    "another-mod": "*"
   }
 }
