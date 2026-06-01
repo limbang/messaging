@@ -7,9 +7,11 @@
 
 package top.limbang;
 
+import dev.architectury.platform.Platform;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.*;
 import net.minecraft.server.MinecraftServer;
+import top.limbang.config.MessagingConfig;
 import top.limbang.entity.UserMessage;
 import top.limbang.utils.WebsocketServer;
 
@@ -46,7 +48,10 @@ public class MessagingServer {
 
     public static void create(MinecraftServer server){
         minecraftServer = server;
-        new Thread(() -> websocketServer.create(2333), "WebSocketServer").start();
+        // 加载配置
+        MessagingConfig config = MessagingConfig.load(Platform.getConfigFolder());
+        // 创建 WebSocket 服务器
+        new Thread(() -> websocketServer.create(config.websocketPort), "WebSocketServer").start();
     }
 
     public static void stop(){
