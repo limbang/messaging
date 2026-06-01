@@ -7,7 +7,7 @@
 
 package top.limbang;
 
-import dev.architectury.platform.Platform;
+import me.shedaniel.architectury.platform.Platform;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
 import net.minecraft.network.chat.*;

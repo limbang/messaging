@@ -7,8 +7,8 @@
 
 package top.limbang.config;
 
-import com.mojang.logging.LogUtils;
-import org.slf4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -26,7 +26,7 @@ public class MessagingConfig {
 
     public static final String FILE_NAME = "messaging.properties";
 
-    private static final Logger LOGGER = LogUtils.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger("MessagingConfig");
 
     /**
      * 加载配置文件
